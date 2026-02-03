@@ -46,7 +46,7 @@ In this step we had two options. I went with the second option of using:
 
 >sudo usermod -aG sudo lupu
 
-![alt text](<Screenshot 2026-02-03 125138-1.png>)
+<img width="615" height="55" alt="Screenshot 2026-02-03 125138" src="https://github.com/user-attachments/assets/3a85ae39-18c6-4743-a618-df1a8b623f80" />
 
 ## Step 5: Create a directory /opt/projekti and add both users (Tupu and Lupu) as owners. Only Tupu and Lupu should have access to list files in the directory, read, and modify them.
  I created common group for both users:

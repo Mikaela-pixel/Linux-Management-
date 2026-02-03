@@ -7,6 +7,7 @@
 5. In Managment section we enable auto-shutdown at 7pm by our time zone.
 6. After that we didnt change enything else and created VM succesfully.
 
+# Assignment 3:
 ## Step 1:  Create the Tupu user using the adduser script
 In this step we add new Tupu user. Then creating password and info.
 

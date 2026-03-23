@@ -103,3 +103,169 @@ hupu is a unauthorized access so it should so access denied.
 
 ![alt text](<Screenshot 2026-02-03 130510.png>)
 
+# Assignment 6:
+## Step 1:
+>apt --version
+
+![alt text](image.png)
+
+### 1. Check APT Version
+
+This command shows the currently installed version of APT (Advanced Package Tool), which is the package manager used in Ubuntu-based systems.
+
+### 2. Update Package List
+>sudo apt update
+
+Purpose:
+
+- Downloads the latest package lists from repositories
+- Refreshes system metadata
+- Does not install or upgrade any software
+
+### 3. Upgrade Installed Packages
+>sudo apt upgrade -y
+
+Difference Between update and upgrade:
+
+| Command       | Description              |
+| ------------- | -------------------------- |
+| `apt update`  | Refreshes package list     |
+| `apt upgrade` | Installs available updates |
+
+#### Simple way to remember:
+
+update = check for updates
+
+upgrade = install updates
+
+### 4. View Pending Updates
+>apt list --upgradable
+
+Explanation:
+Displays a list of installed packages that have newer versions available.
+
+![alt text](<Linux 6.1.png>)
+
+## Step 2:
+#### 1. Search for an Image Editor
+>apt search image editor
+
+Selected Package: gimp
+
+#### 2. View Package Details
+>apt show gimp
+
+Key Dependencies:
+
+- libgimp2.0t64
+
+- gimp-data
+
+- libc6
+
+- libgtk2.0-0t64
+
+- libpng16-16t64
+
+- libjpeg8
+
+- libtiff6
+
+- libwebp7
+
+- zlib1g
+
+- graphviz
+
+- xdg-utils
+
+Explanation: These dependencies are required for:
+
+- Graphical rendering
+
+- Image processing
+
+- File format support
+
+- System integration
+
+#### 3. Install the Package
+>sudo apt install gimp -y
+
+Verify Installation:
+>gimp --version
+
+Output Example:
+GNU Image Manipulation Program version 2.10.36
+
+#### 4. Check Installed Package Version
+
+>apt list --installed | grep gimp
+
+Output Example:
+>gimp/noble-updates,now 2.10.36-3ubuntu0.24.04.1 amd64 [installed]
+
+Additional Installed Packages:
+
+- gimp-data
+
+- libgimp2.0t64
+
+These were installed automatically as dependencies.
+
+## Step 3:
+#### 1. Remove a Package
+>sudo apt remove gimp -y
+
+#### 2. Purge Configuration Files
+>sudo apt purge gimp -y
+
+Difference Between remove and purge Command Removes remove Program files only purge Program + configuration files
+
+#### 3. Remove Unused Dependencies
+>sudo apt autoremove -y
+
+Why this is important:
+
+Dependencies remain after uninstalling a package
+
+autoremove cleans unnecessary packages
+
+Helps keep the system clean
+
+#### 4. Clean Cached Files
+>sudo apt clean
+
+Removes all cached package files from your system.
+
+## Step 4:
+#### 1. List APT Repositories
+>cat /etc/apt/sources.list
+
+#### 2. Add Universe Repository
+>sudo add-apt-repository universe
+
+What it does:
+- Adds the universe repository to your system’s software sources
+- Makes thousands of additional open-source packages available
+- Updates your system’s repository configuration
+
+#### 3. Simulate Installation Failure
+>sudo apt install fakepackage
+
+If Error:
+![alt text](image-1.png)
+
+Troubleshooting Steps
+
+- Check spelling:
+>apt search fakepackage
+
+- Update package list:
+>sudo apt update
+
+- Verify repositories:
+>cat /etc/apt/sources.list
+
+- Check internet connection
+

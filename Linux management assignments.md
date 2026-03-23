@@ -254,6 +254,7 @@ What it does:
 >sudo apt install fakepackage
 
 If Error:
+
 ![alt text](image-1.png)
 
 Troubleshooting Steps
@@ -395,4 +396,4 @@ Resulting configuration includes:
 - HTTP and HTTPS: permitted
 - Logging: enabled (medium level)
 
-![alt text](image-2.png)
+<img width="911" height="961" alt="Screenshot 2026-03-23 134552" src="https://github.com/user-attachments/assets/b2db33ef-67f7-4be0-b2c2-b6b35748f68f" />

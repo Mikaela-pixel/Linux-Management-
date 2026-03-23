@@ -269,3 +269,67 @@ Troubleshooting Steps
 
 - Check internet connection
 
+# Assignment 8:
+## Step 1: Firewall Setup
+The firewall was configured using to secure the server.
+
+Permitted Services
+SSH (OpenSSH Server)
+>sudo ufw limit ssh
+
+- Enables remote access via SSH on port 22.
+- The limit option restricts the rate of incoming connections, helping to defend against brute-force login attempts and SYN flood attacks.
+
+### Web Server (HTTP)
+>sudo ufw limit http
+
+- Allows incoming traffic on port 80 (TCP).
+- This makes the web server accessible to users over standard HTTP.
+
+### Secure Web Server (HTTPS)
+>sudo ufw limit https
+
+- Allows incoming traffic on port 80 (TCP).
+- This makes the web server accessible to users over standard HTTP.
+
+### Secure Web Server (HTTPS)
+>sudo ufw limit https
+
+- Opens port 443 (TCP) for encrypted communication.
+- Ensures secure data transfer between clients and the server.
+
+## Step 2: Logging Setup
+>sudo ufw logging medium
+
+- Activates firewall logging at a medium level.
+- Captures blocked traffic and new connection attempts.
+- Useful for identifying suspicious behavior, debugging, and monitoring network activity.
+
+#### Log file location:
+>/var/log/ufw.log
+
+## Step 3: Protection Against SYN Flood Attacks
+>sudo ufw limit ssh
+
+- Controls the rate of incoming TCP connection requests.
+- Helps prevent resource exhaustion caused by excessive half-open connections during a SYN flood attack.
+
+## Step 4: Additional Security Measures
+#### SSH Brute-Force Defense
+>sudo ufw limit ssh
+
+- Detects repeated login attempts from the same IP address.
+- Temporarily blocks further attempts if the rate exceeds allowed limits.
+
+## Step 5: Checking Firewall Status
+To confirm the configuration, the following command was used:
+>sudo ufw status verbose
+
+Resulting configuration includes:
+- Incoming traffic: denied by default
+- Outgoing traffic: allowed by default
+- SSH: rate-limited
+- HTTP and HTTPS: permitted
+- Logging: enabled (medium level)
+
+![alt text](image-2.png)
